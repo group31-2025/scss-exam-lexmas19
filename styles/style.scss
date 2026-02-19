@@ -1,0 +1,279 @@
+@import "./variables";
+@import "./reset";
+@import "./mixins";
+
+header {
+  background-color: $black;
+  width: 100%;
+  min-height: 100px;
+  padding: 35px 165px 97px 165px;
+
+  @media (max-width: 700px) {
+    padding: 24px 32px;
+  }
+
+  nav {
+    border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+    @include flex(row, space-between, center);
+    padding-bottom: 36px;
+
+    #menu {
+      display: none;
+
+      @media (max-width: 700px) {
+        display: inline-block;
+      }
+    }
+
+    ul {
+      @include flex(row, center, center);
+      gap: 34px;
+      list-style: none;
+
+      @media (max-width: 700px) {
+        display: none;
+      }
+
+      li {
+        a {
+          @include regularP($white);
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          text-decoration: none;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+
+  h1 {
+    @include regularH($white);
+    @include flex(row, center, center);
+    margin-top: 98px;
+  }
+}
+
+.product-example {
+  padding: 160px 165px 0 165px;
+  @include flex(row, center, center);
+
+  @media (max-width: 700px) {
+    padding: 64px 24px 0 24px;
+    @include flex(column, center, center);
+    text-align: center;
+  }
+
+  #yx1 {
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+  }
+
+  .about-product {
+    margin-left: 125px;
+    text-align: left;
+
+    @media (max-width: 700px) {
+      text-align: center;
+      margin-left: 0;
+      margin-top: 32px;
+    }
+    h3 {
+      @include regularH($brown);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 10px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      @include regularH($black);
+      margin-bottom: 32px;
+      @media (max-width: 700px) {
+        text-align: center;
+
+        font-size: 28px;
+
+        letter-spacing: 1px;
+      }
+    }
+
+    p {
+      @include regularP($black);
+      opacity: 0.5;
+      margin-bottom: 40px;
+      @media (max-width: 700px) {
+        text-align: center;
+      }
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 13px;
+      color: $white;
+      background-color: $brown;
+      border: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      &:hover {
+        background-color: #fbaf85;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.cards {
+  @include flex(row, space-between, center);
+  padding: 240px 165px 0 165px;
+
+  @media (max-width: 700px) {
+    @include flex(column, center, center);
+    padding: 172px 24px 0 24px;
+    gap: 68px;
+  }
+
+  .card {
+    width: 350px;
+    height: 204px;
+    border-radius: 8px;
+    @include flex(column, center, center);
+    background-color: $grey;
+
+    @media (max-width: 700px) {
+      width: 327px;
+      height: 165px;
+    }
+
+    #card-photo {
+      margin-top: -125px;
+
+      @media (max-width: 700px) {
+        width: 147px;
+        height: 133px;
+        margin-top: -80px;
+      }
+    }
+
+    h5 {
+      margin-top: 36px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #787878;
+      margin-top: 15px;
+    }
+  }
+}
+
+.best-gear {
+  padding: 160px 165px;
+  @include flex(row, center, center);
+
+  @media (max-width: 700px) {
+    @include flex(column-reverse, center, center);
+    text-align: center;
+    padding: 160px 24px 120px 24px;
+  }
+  .gear-text {
+    margin-right: 130px;
+
+    @media (max-width: 700px) {
+      margin-right: 0;
+      text-align: center;
+    }
+    h2 {
+      @include regularH();
+      span {
+        color: $brown;
+      }
+    }
+
+    @media (max-width: 700px) {
+      margin-top: 50px;
+    }
+    p {
+      @include regularP;
+      opacity: 0.5;
+      margin-top: 32px;
+    }
+  }
+
+  #gear {
+    max-width: 100%;
+  }
+}
+
+footer {
+  background-color: $black;
+  padding: 75px 165px 48px 165px;
+
+  @media (max-width: 700px) {
+    padding: 52px 24px 38px 24px;
+  }
+
+  nav {
+    @include flex(row, space-between, center);
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
+
+    ul {
+      @include flex(row, center, center);
+      gap: 34px;
+      list-style: none;
+
+      @media (max-width: 700px) {
+        flex-direction: column;
+        margin-top: 48px;
+      }
+
+      li {
+        a {
+          @include regularP($white);
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          text-decoration: none;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+
+  .foot-info {
+    @include flex(row, space-between, center);
+    margin-top: 36px;
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+      text-align: center;
+    }
+    .left {
+      p {
+        @include regularP($white);
+        opacity: 0.5;
+        max-width: 540px;
+
+        @media (max-width: 700px) {
+          margin-top: 48px;
+        }
+      }
+    }
+    .right {
+      @include flex(row, center, center);
+      gap: 10px;
+
+      @media (max-width: 700px) {
+        margin-top: 48px;
+      }
+    }
+  }
+}
